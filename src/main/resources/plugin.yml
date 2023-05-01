@@ -1,0 +1,13 @@
+name: $name
+main: nl.onlyfour.openminetopia.OpenMinetopia
+version: $version
+api-version: $apiVersion
+description: $description
+authors:
+  - OnlyF0uR
+load: POSTWORLD
+depend:
+  - Vault
+  - WorldEdit
+  - WorldGuard
+  - PlaceholderAPI
