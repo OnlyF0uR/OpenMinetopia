@@ -1,7 +1,7 @@
 package nl.onlyfour.openminetopia.api;
 
 import nl.onlyfour.openminetopia.data.Cache;
-import nl.onlyfour.openminetopia.data.CacheObject;
+import nl.onlyfour.openminetopia.data.PlayerCacheObject;
 import nl.onlyfour.openminetopia.data.SideJob;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -12,6 +12,7 @@ import java.util.UUID;
 
 public class MTPlayer {
     private final OfflinePlayer offlinePlayer;
+    private boolean hasLoaded;
 
     public MTPlayer(OfflinePlayer offlinePlayer) {
         this.offlinePlayer = offlinePlayer;
@@ -23,10 +24,24 @@ public class MTPlayer {
 
     public MTPlayer(UUID uuid) {
         this.offlinePlayer = Bukkit.getOfflinePlayer(uuid);
+        this.hasLoaded = false;
+    }
+
+    public void loadPlayer(boolean cachePlayer, boolean allowWelcomeMessages) {
+        // Select all the data of the player
+        // If the player does not exist, create the player
+
+        // Cache the player if requested
+
+        this.hasLoaded = true;
+    }
+
+    public boolean hasLoaded() {
+        return this.hasLoaded;
     }
 
     public double shardCount() {
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj == null) {
             // TODO: Get from database
             return 0.;
@@ -39,18 +54,18 @@ public class MTPlayer {
         double currentShardCount = this.shardCount();
         double newShardCount = currentShardCount + shards;
 
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj != null) {
             // Cache new amount
             obj.shards = newShardCount;
-            Cache.toCache(this.offlinePlayer.getUniqueId(), obj);
+            Cache.cachePlayer(this.offlinePlayer.getUniqueId(), obj);
         }
 
         // TODO: Write the database
     }
 
     public int level() {
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj == null) {
             // TODO: Get from database
             return 0;
@@ -60,7 +75,7 @@ public class MTPlayer {
     }
 
     public String currentChatColour() {
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj == null) {
             // TODO: Get from database
             return "#ffffff";
@@ -76,13 +91,11 @@ public class MTPlayer {
             return;
         }
 
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj != null) {
             obj.currentChatColour = colour;
-            Cache.toCache(this.offlinePlayer.getUniqueId(), obj);
+            Cache.cachePlayer(this.offlinePlayer.getUniqueId(), obj);
         }
-
-        // TODO: Write the database
     }
 
     public List<String> chatColours() {
@@ -102,10 +115,51 @@ public class MTPlayer {
         // TODO: Write to the database
     }
 
-    public String job() {
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+    // ======================================
+    public String currentNameColour() {
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj == null) {
             // TODO: Get from database
+            return "#ffffff";
+        } else {
+            return obj.currentNameColour;
+        }
+    }
+
+    public void currentNameColour(String colour) {
+        // TODO: Check for validity
+
+        if (!this.nameColours().contains(colour)) {
+            return;
+        }
+
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
+        if (obj != null) {
+            obj.currentNameColour = colour;
+            Cache.cachePlayer(this.offlinePlayer.getUniqueId(), obj);
+        }
+    }
+
+    public List<String> nameColours() {
+        // TODO: Get from database
+
+        // Return empty list for now
+        return List.of();
+    }
+
+    public void addNameColour(String colour) {
+        // TODO: Check for validity
+        // TODO: Write to the database
+    }
+
+    public void removeNameColour(String colour) {
+        // TODO: Check for validity
+        // TODO: Write to the database
+    }
+
+    public String job() {
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
+        if (obj == null) {
             return "";
         } else {
             return obj.job;
@@ -115,35 +169,31 @@ public class MTPlayer {
     public void setJob(String job) {
         // TODO: Check for validity
 
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj != null) {
             obj.job = job;
-            Cache.toCache(this.offlinePlayer.getUniqueId(), obj);
+            Cache.cachePlayer(this.offlinePlayer.getUniqueId(), obj);
         }
-
-        // TODO: Write the database
     }
 
-    public SideJob sideJob() {
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+    public SideJob sideJobId() {
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj == null) {
             // TODO: Get from database
             return SideJob.UNEMPLOYED;
         } else {
-            return obj.sideJob;
+            return obj.sideJobId;
         }
     }
 
-    public void setSideJob(SideJob sideJob) {
+    public void setSideJob(SideJob sideJobId) {
         // TODO: Check for validity
 
-        CacheObject obj = Cache.fromCache(this.offlinePlayer.getUniqueId());
+        PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj != null) {
-            obj.sideJob = sideJob;
-            Cache.toCache(this.offlinePlayer.getUniqueId(), obj);
+            obj.sideJobId = sideJobId;
+            Cache.cachePlayer(this.offlinePlayer.getUniqueId(), obj);
         }
-
-        // TODO: Write the database
     }
 
     public List<MTBooster> boosters() {

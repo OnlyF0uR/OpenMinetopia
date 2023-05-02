@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class PinCMD implements CommandExecutor {
     private final OpenMinetopia plugin;
+
     public PinCMD(OpenMinetopia plugin) {
         this.plugin = plugin;
     }

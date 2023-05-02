@@ -1,18 +1,22 @@
 package nl.onlyfour.openminetopia.api;
 
+import nl.onlyfour.openminetopia.data.Booster;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
 public class MTBooster {
-    private double multiplier;
-    private long duration;
+    public final double multiplier;
+    public final long duration;
 
-    UUID ownerUuid;
+    public final Booster boosterType;
 
-    public MTBooster(double multiplier, long duration) {
+    public UUID ownerUuid;
+
+    public MTBooster(double multiplier, long duration, Booster boosterType) {
         this.multiplier = multiplier;
         this.duration = duration;
+        this.boosterType = boosterType;
     }
 
     public boolean playerOwned() {

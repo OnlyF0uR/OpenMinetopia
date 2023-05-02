@@ -10,4 +10,9 @@ depend:
   - Vault
   - WorldEdit
   - WorldGuard
+softdepend:
   - PlaceholderAPI
+commands:
+  pin:
+    description: "Pin command"
+    usage: "/pin <player> <amount>"

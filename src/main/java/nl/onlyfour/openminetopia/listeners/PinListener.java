@@ -37,6 +37,10 @@ public record PinListener(OpenMinetopia plugin) implements Listener {
                 pr.awaitingPayment(l);
 
                 p.sendMessage(plugin.getMessage("Finance.Pin.RequestCreated"));
+                pr.payer.sendMessage(
+                        plugin.getMessage("Finance.Pin.RequestReceived")
+                                .replaceText(TextReplacementConfig.builder().matchLiteral("%player%").replacement(p.getName()).build())
+                                .replaceText(TextReplacementConfig.builder().matchLiteral("%amount%").replacement(String.valueOf(pr.amount)).build()));
             } else if (Cache.pinRequests.containsKey(p.getName())) {
                 // Pin payment
                 PinRequest pr = Cache.pinRequests.get(p.getName());

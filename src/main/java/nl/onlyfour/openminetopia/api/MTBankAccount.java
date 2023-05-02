@@ -16,6 +16,11 @@ public class MTBankAccount {
         this.bankId = bankId;
     }
 
+    public static MTBankAccount fromDatabase(String accountName) {
+        // TODO: This
+        return null;
+    }
+
     public void owner(UUID uuid) {
         this.ownerUuid = uuid;
     }
@@ -26,10 +31,5 @@ public class MTBankAccount {
 
     public void save() {
         // TODO: Save to the database
-    }
-
-    public static MTBankAccount fromDatabase(String accountName) {
-        // TODO: This
-        return null;
     }
 }

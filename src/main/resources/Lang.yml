@@ -1,10 +1,17 @@
+Traffic:
+  Welcome: "--#ffffff--Welcome, friend!"
+  WelcomeBack: "--#ffffff--Welcome back, friend!"
+  Join: "--#061c38--(--#7feb21--+--#061c38--) --#ffffff--%player%"
+  Quit: "--#061c38--(--#7a0917-----#061c38--) --#ffffff--%player%"
 Finance:
-  ATMTitle: "ATM"
+  ATM:
+    Title: "ATM"
   Pin:
-    InvalidCommand: "Please use: /pin <player> <amount>"
+    InvalidCommand: "--#7a0917--Please use: --#ff425a--/pin <player> <amount>"
     RequestCreationStarted: "Please click a pin to create a pin-request."
     RequestCreated: "Successfully created a pin-request for %player% of $%amount%."
-    RequestPaid: "You have successfully transferred $%amount%."
-    RequestSatisfied: "%player% has successfully paid $%amount%."
-    CannotAfford: "You cannot afford to complete this transaction."
-    PayerCannotAfford: "%player% cannot afford to complete the transaction."
+    RequestReceived: "A pin request for you has been created by %player% for $%amount%. Click the pin-console to transfer the money."
+    RequestPaid: "--#7feb21--You have successfully transferred --#498c0e--$%amount%."
+    RequestSatisfied: "--#498c0e--%player% --#7feb21--has successfully paid --#498c0e--$%amount%."
+    CannotAfford: "--#ff425a--You cannot afford to complete this transaction."
+    PayerCannotAfford: "--#7a0917--%player% --#ff425a--cannot afford to complete the transaction."

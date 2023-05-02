@@ -1,7 +1,5 @@
 package nl.onlyfour.openminetopia.data;
 
-import net.kyori.adventure.text.TextReplacementConfig;
-import nl.onlyfour.openminetopia.OpenMinetopia;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -12,6 +10,7 @@ public class PinRequest {
     public double amount;
     public Location pinLocation;
     private String receiverAccountName;
+
     public PinRequest(Player payer, Player requester, String receiverAccountName, double amount) {
         this.payer = payer;
         this.requester = requester;

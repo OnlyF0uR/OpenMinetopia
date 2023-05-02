@@ -5,3 +5,20 @@ Database:
 Finance:
   ATMBlock: RED_SANDSTONE_STAIRS
   PinBlock: PURPUR_STAIRS
+  Accounts:
+    # Personal is both private & shared accounts
+    Personal:
+      MaxAmount: 3
+      Material: REDSTONE_BLOCK
+    # Accounts for businesses and government corporations
+    Business:
+      MaxAmount: 5
+      Material: EMERALD_BLOCK
+    # Private savings account
+    Savings:
+      MaxAmount: 1
+      Material: GOLD_BLOCK
+      Interest: 2.5
+Chat:
+  Format: "--#061c38--(--#81b3aa--%level%--#061c38--) --#061c38--(--#81b3aa--%job%--#061c38--) %player%--#061c38--: "
+  Proximity: 15
