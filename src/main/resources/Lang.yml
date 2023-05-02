@@ -1,0 +1,10 @@
+Finance:
+  ATMTitle: "ATM"
+  Pin:
+    InvalidCommand: "Please use: /pin <player> <amount>"
+    RequestCreationStarted: "Please click a pin to create a pin-request."
+    RequestCreated: "Successfully created a pin-request for %player% of $%amount%."
+    RequestPaid: "You have successfully transferred $%amount%."
+    RequestSatisfied: "%player% has successfully paid $%amount%."
+    CannotAfford: "You cannot afford to complete this transaction."
+    PayerCannotAfford: "%player% cannot afford to complete the transaction."

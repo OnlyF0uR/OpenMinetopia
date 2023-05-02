@@ -1,7 +1,9 @@
 package nl.onlyfour.openminetopia.data;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class Cache {
@@ -22,5 +24,8 @@ public class Cache {
         }
     }
 
+    // ==================================
+    public static final HashMap<String, PinRequest> pinInitiationRequests = new HashMap<>();
+    public static final HashMap<String, PinRequest> pinRequests = new HashMap<>();
 }
 

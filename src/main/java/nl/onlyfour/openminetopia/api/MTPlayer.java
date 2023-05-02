@@ -146,7 +146,7 @@ public class MTPlayer {
         // TODO: Write the database
     }
 
-    public List<Booster> boosters() {
+    public List<MTBooster> boosters() {
         // TODO: Get from database
 
         // Return empty list for now

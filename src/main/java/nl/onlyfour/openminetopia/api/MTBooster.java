@@ -4,13 +4,13 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class Booster {
+public class MTBooster {
     private double multiplier;
     private long duration;
 
     UUID ownerUuid;
 
-    public Booster(double multiplier, long duration) {
+    public MTBooster(double multiplier, long duration) {
         this.multiplier = multiplier;
         this.duration = duration;
     }
@@ -26,7 +26,7 @@ public class Booster {
     public void activate(Player activator) {
         if (this.playerOwned()) {
             if (!activator.getUniqueId().equals(this.ownerUuid)) {
-                if (!activator.hasPermission("openminetopia.admin")) {
+                if (!activator.hasPermission("openminetopia.admin") || !activator.hasPermission("openminetopia.booster.other")) {
                     // Not allowed to activate
                     return;
                 }

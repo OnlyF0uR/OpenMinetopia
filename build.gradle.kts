@@ -20,9 +20,9 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
     implementation("com.zaxxer:HikariCP:5.0.1") // Shade
 
-//    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
-//    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.1.0-SNAPSHOT")
-//    compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.0-SNAPSHOT")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
+    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.1.0-SNAPSHOT")
+    compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.3.0-SNAPSHOT")
 }
 
 tasks {

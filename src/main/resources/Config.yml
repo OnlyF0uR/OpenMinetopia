@@ -2,3 +2,6 @@ Database:
   Url: ""
   Username: ""
   Password: ""
+Finance:
+  ATMBlock: RED_SANDSTONE_STAIRS
+  PinBlock: PURPUR_STAIRS
