@@ -1,7 +1,7 @@
 package nl.onlyfour.openminetopia.commands;
 
 import nl.onlyfour.openminetopia.OpenMinetopia;
-import nl.onlyfour.openminetopia.data.PinRequest;
+import nl.onlyfour.openminetopia.structures.PinRequest;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +18,7 @@ public class PinCMD implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player requester)) {
             return true;
         }
 
@@ -27,7 +27,6 @@ public class PinCMD implements CommandExecutor {
             return true;
         }
 
-        Player requester = (Player) sender;
         // TODO: Check if the player is allowed to create a pin request
 
         // Parse the player argument

@@ -5,7 +5,7 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import nl.onlyfour.openminetopia.OpenMinetopia;
 import nl.onlyfour.openminetopia.data.Cache;
-import nl.onlyfour.openminetopia.data.PlayerCacheObject;
+import nl.onlyfour.openminetopia.structures.schemas.PlayerCacheObject;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

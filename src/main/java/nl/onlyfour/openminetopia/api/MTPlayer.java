@@ -1,8 +1,8 @@
 package nl.onlyfour.openminetopia.api;
 
 import nl.onlyfour.openminetopia.data.Cache;
-import nl.onlyfour.openminetopia.data.PlayerCacheObject;
-import nl.onlyfour.openminetopia.data.SideJob;
+import nl.onlyfour.openminetopia.structures.schemas.PlayerCacheObject;
+import nl.onlyfour.openminetopia.structures.types.SideJob;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -27,6 +27,14 @@ public class MTPlayer {
         this.hasLoaded = false;
     }
 
+    /**
+     * This function also contains the functionality to create a player in the database if the player does not exist.
+     * If called only with cachePlayer false and allowWelcomeMessages false it will only check if a player exists and
+     * create a new database entry if not.
+     *
+     * @param cachePlayer          Whether to cache the player
+     * @param allowWelcomeMessages Whether to send welcome messages
+     */
     public void loadPlayer(boolean cachePlayer, boolean allowWelcomeMessages) {
         // Select all the data of the player
         // If the player does not exist, create the player
@@ -176,22 +184,22 @@ public class MTPlayer {
         }
     }
 
-    public SideJob sideJobId() {
+    public SideJob sideJob() {
         PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj == null) {
             // TODO: Get from database
             return SideJob.UNEMPLOYED;
         } else {
-            return obj.sideJobId;
+            return obj.sideJob;
         }
     }
 
-    public void setSideJob(SideJob sideJobId) {
+    public void setSideJob(SideJob sideJob) {
         // TODO: Check for validity
 
         PlayerCacheObject obj = Cache.playerFromCache(this.offlinePlayer.getUniqueId());
         if (obj != null) {
-            obj.sideJobId = sideJobId;
+            obj.sideJob = sideJob;
             Cache.cachePlayer(this.offlinePlayer.getUniqueId(), obj);
         }
     }

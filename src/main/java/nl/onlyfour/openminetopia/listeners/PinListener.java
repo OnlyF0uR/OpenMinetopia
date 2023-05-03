@@ -3,7 +3,7 @@ package nl.onlyfour.openminetopia.listeners;
 import net.kyori.adventure.text.TextReplacementConfig;
 import nl.onlyfour.openminetopia.OpenMinetopia;
 import nl.onlyfour.openminetopia.data.Cache;
-import nl.onlyfour.openminetopia.data.PinRequest;
+import nl.onlyfour.openminetopia.structures.PinRequest;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;

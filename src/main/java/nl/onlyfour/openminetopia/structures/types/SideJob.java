@@ -1,4 +1,4 @@
-package nl.onlyfour.openminetopia.data;
+package nl.onlyfour.openminetopia.structures.types;
 
 public enum SideJob {
     UNEMPLOYED, // 0

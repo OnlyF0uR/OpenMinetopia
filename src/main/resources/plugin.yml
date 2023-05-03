@@ -7,7 +7,6 @@ authors:
   - OnlyF0uR
 load: POSTWORLD
 depend:
-  - Vault
   - WorldEdit
   - WorldGuard
 softdepend:

@@ -1,6 +1,6 @@
 package nl.onlyfour.openminetopia.api;
 
-import nl.onlyfour.openminetopia.data.Booster;
+import nl.onlyfour.openminetopia.structures.types.Booster;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;

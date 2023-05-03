@@ -5,7 +5,6 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import nl.onlyfour.openminetopia.commands.PinCMD;
 import nl.onlyfour.openminetopia.data.Database;
-import nl.onlyfour.openminetopia.data.Economy;
 import nl.onlyfour.openminetopia.listeners.ATMListener;
 import nl.onlyfour.openminetopia.listeners.PinListener;
 import nl.onlyfour.openminetopia.listeners.PlayerChatListener;
@@ -23,13 +22,6 @@ public class OpenMinetopia extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Vault setup
-        if (!Economy.setupEconomy()) {
-            this.getLogger().severe("Vault not found, disabling plugin.");
-            this.getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
-
         // Configuration management
         this.fileManager.getConfig("Config.yml").setDefaults(true);
         this.fileManager.getConfig("Lang.yml").setDefaults(true);

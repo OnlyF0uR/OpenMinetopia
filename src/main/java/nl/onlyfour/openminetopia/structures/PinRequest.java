@@ -1,5 +1,6 @@
-package nl.onlyfour.openminetopia.data;
+package nl.onlyfour.openminetopia.structures;
 
+import nl.onlyfour.openminetopia.data.Cache;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -34,14 +35,14 @@ public class PinRequest {
     public boolean tryPaying(Player p) {
         if (this.isPending()) {
             PinRequest pr = Cache.pinRequests.get(this.payer.getName());
-            if (pr.amount <= Economy.getEconomy().getBalance(p)) {
-                Economy.getEconomy().withdrawPlayer(p, pr.amount);
-
-                // TODO: Add money to the appropiate account
-
-                Cache.pinRequests.remove(this.payer.getName());
-                return true;
-            }
+//            if (pr.amount <= Economy.getEconomy().getBalance(p)) {
+//                Economy.getEconomy().withdrawPlayer(p, pr.amount);
+//
+//                // TODO: Add money to the appropiate account
+//
+//                Cache.pinRequests.remove(this.payer.getName());
+//                return true;
+//            }
         }
         return false;
     }

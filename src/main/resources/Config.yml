@@ -19,6 +19,10 @@ Finance:
       MaxAmount: 1
       Material: GOLD_BLOCK
       Interest: 2.5
+  Savings:
+    Interest: 0.5
+    # Interval in seconds
+    Interval: 86400
 Chat:
   Format: "--#061c38--(--#81b3aa--%level%--#061c38--) --#061c38--(--#81b3aa--%job%--#061c38--) %player%--#061c38--: "
   Proximity: 15

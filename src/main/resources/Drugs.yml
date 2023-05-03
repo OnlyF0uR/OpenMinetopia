@@ -1,0 +1,61 @@
+# =============== =============== ===============
+COCAINE:
+  Name: '--#daf5dd--Cocaine'
+  Material: SUGAR
+  # Names of gangs that are allowed to deal this drug, empty for no whitelist
+  GangWhitelist: []
+  Packaging:
+    Ingredients:
+      MILK_BUCKET:
+        Amount: 1
+      FERMENTED_SPIDER_EYE:
+        Amount: 2
+      GUNPOWDER:
+        Amount: 1
+    # In Seconds
+    Time: 30
+    RewardAmount: 1
+  Delivery:
+    Locations:
+      0:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+      1:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+    MinPrice: 800
+    MaxPrice: 1220
+# =============== =============== ===============
+METH:
+  Name: '--#61ff73--Meth'
+  Material: SUGARCANE
+  GangWhitelist: []
+  Packaging:
+    # In Seconds
+    Time: 45
+    RewardAmount: 1
+    Ingredients:
+      FERMENTED_SPIDER_EYE:
+        Amount: 2
+      GUNPOWDER:
+        Amount: 1
+      LIGHT_GREEN_DYE:
+        Amount: 1
+  Delivery:
+    Locations:
+      0:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+      1:
+        world: world
+        x: 0
+        y: 0
+        z: 0
+    MinPrice: 1100
+    MaxPrice: 1750

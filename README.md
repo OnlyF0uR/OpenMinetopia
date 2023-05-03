@@ -1,6 +1,6 @@
 # OpenMinetopia
 
-Open-source, free-to-use, Minetopia plugin that brings reality to Minecraft.
+Open-source, free-to-use, Minetopia plugin. I currently do not intend on consistenly working on this resource not using it myself. I'm just putting this out there as an opportunity for other people to create a truly authentic experience.
 
 ### Features
 
@@ -27,6 +27,8 @@ Open-source, free-to-use, Minetopia plugin that brings reality to Minecraft.
 - [ ] Crafting system
 - [ ] Automatic salary for jobs (from company account)
 - [ ] Backpacks, suitcases etc.
+- [ ] bStats
+- [ ] Phone with apps
 
 ### Permissions
 
